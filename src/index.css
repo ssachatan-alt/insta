@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-obsidian: #080808;
+    --red-glow: #e11d48;
+    --red-deep: #8b0000;
+    --red-vivid: #ff1a40;
+    --gold-champagne: #dfba73;
+    --text-ivory: #f8fafc;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+    background-color: var(--bg-obsidian);
+    color: var(--text-ivory);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+    overscroll-behavior: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+/* Custom Typography Utilities */
+.font-serif-luxury {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+}
+
+.font-display-luxury {
+  font-family: 'Cinzel', serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Luxury Glassmorphism */
+.glass-panel {
+  background: rgba(18, 18, 20, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-pill {
+  background: rgba(22, 22, 24, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill:hover {
+  border-color: rgba(255, 26, 64, 0.35);
+  background: rgba(30, 24, 28, 0.7);
+  box-shadow: 0 0 20px rgba(255, 26, 64, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Crimson glow accents */
+.crimson-glow {
+  box-shadow: 0 0 40px 10px rgba(225, 29, 72, 0.2);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f7e7c4 0%, #dfba73 50%, #c49746 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-crimson-gradient {
+  background: linear-gradient(180deg, #ffffff 10%, #ffd1d8 50%, #ff1a40 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Smooth keyframes */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 8s ease-in-out infinite;
+}
+
+@keyframes audioWave {
+  0%, 100% { height: 4px; }
+  50% { height: 14px; }
+}
+
+.audio-bar-1 { animation: audioWave 1.1s ease-in-out infinite; }
+.audio-bar-2 { animation: audioWave 0.8s ease-in-out infinite 0.2s; }
+.audio-bar-3 { animation: audioWave 1.3s ease-in-out infinite 0.4s; }
